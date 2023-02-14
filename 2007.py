@@ -11,7 +11,7 @@ data_violin.append(data['pop'])
 data_violin.append(data['lifeExp'])
 
 fig = plt.figure()
-sns.violinplot(data=data_violin)
+sns.violinplot(data=data_violin, scale="width")
 plt.title('Violin_plots', fontsize=20, fontweight="bold")
 
 st.pyplot(fig)
