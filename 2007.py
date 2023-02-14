@@ -5,9 +5,14 @@ import streamlit as st
 data = pd.read_csv('gapminder_with_codes.csv')
 data_2007 = data[data['year'] == 2007]
 
+data_violin = []
+data_violin.append(data['gdpPercap'])
+data_violin.append(data['pop'])
+data_violin.append(data['lifeExp'])
+
 fig = plt.figure()
-sns.violinplot(data=data_2007, x='lifeExp')
-plt.title('LIFE EXPECTANCY', fontsize=20, fontweight="bold")
+sns.violinplot(data=data_violin)
+plt.title('Violin_plots', fontsize=20, fontweight="bold")
 
 st.pyplot(fig)
 
